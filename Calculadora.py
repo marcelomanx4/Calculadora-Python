@@ -26,7 +26,7 @@ todos_valores = ''
 # Criando Funcao
 def entrar_valores(valor):
     global todos_valores
-    todos_valores = todos_valores + str(valor)
+    todos_valores = str(todos_valores) + str(valor)
 
     valor_texto.set(todos_valores)
 
@@ -34,7 +34,8 @@ def entrar_valores(valor):
 def calcular():
     global todos_valores
     resultado = eval(todos_valores)
-    valor_texto.set(resultado)
+    valor_texto.set(round(resultado, 12))
+    todos_valores = resultado
 
 #Função Limpar tela
 def limpar_tela():
