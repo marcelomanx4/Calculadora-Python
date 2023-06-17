@@ -7,10 +7,13 @@ cor3 = "#ECEFF1" # Cinza claro
 cor4 = '#FFAB40' # Laranja
 cor5 = '#ff6854' # Vermelho
 cor6 = "#aba6a6" # black
+cor7 = "#879e85" #VerdeCinzento
 
 janela = Tk()
 janela.title('Calculadora')
 janela.geometry('256x310')
+janela.minsize(256, 310)
+janela.maxsize(256, 310)
 janela.configure(bg=cor1)
 janela.config(bg=cor6)
 
@@ -52,7 +55,7 @@ app_label.place(x=0, y=0)
 # Criando Botoes
 b_1 = Button(frame_quadro, command=limpar_tela, text="C", width=12, height=2, bg=cor5, fg=cor1, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
 b_1.place(x=0, y=0)
-b_2 = Button(frame_quadro, command=lambda: entrar_valores('%'), text="%", width=6, height=2, bg=cor6, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
+b_2 = Button(frame_quadro, command=lambda: entrar_valores('%'), text="%", width=6, height=2, bg=cor7, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
 b_2.place(x=120, y=0)
 b_3 = Button(frame_quadro, command=lambda: entrar_valores('/'), text="/", width=6, height=2, bg=cor4, fg=cor1, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
 b_3.place(x=186, y=0)
