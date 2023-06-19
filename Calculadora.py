@@ -46,6 +46,16 @@ def limpar_tela():
     todos_valores = ""
     valor_texto.set("")
 
+#Funçao Delatar
+def deletaUltimo():
+    global todos_valores
+    Str = todos_valores
+    x=list(Str)
+    x.pop()
+    x="".join(x)
+    todos_valores = x
+    valor_texto.set(x)
+
 #Criando Label
 valor_texto = StringVar()
 app_label = Label(frame_tela, textvariable=valor_texto, width=16, height=2, padx=7, relief=FLAT, anchor="e", justify=RIGHT, font='Ivy 18', bg=cor2, fg=cor1)
@@ -53,8 +63,10 @@ app_label.place(x=0, y=0)
 
 
 # Criando Botoes
-b_1 = Button(frame_quadro, command=limpar_tela, text="C", width=12, height=2, bg=cor5, fg=cor1, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
+b_1 = Button(frame_quadro, command=limpar_tela, text="C", width=6, height=2, bg=cor5, fg=cor1, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
 b_1.place(x=0, y=0)
+b_s = Button(frame_quadro, command=lambda: deletaUltimo(), text="<==", width=6, height=2, bg=cor7, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
+b_s.place(x=60, y=0)
 b_2 = Button(frame_quadro, command=lambda: entrar_valores('%'), text="%", width=6, height=2, bg=cor7, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
 b_2.place(x=120, y=0)
 b_3 = Button(frame_quadro, command=lambda: entrar_valores('/'), text="/", width=6, height=2, bg=cor4, fg=cor1, font='Ivy 13 bold', relief=RAISED, overrelief=RIDGE)
